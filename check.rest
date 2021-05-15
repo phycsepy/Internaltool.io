@@ -1,0 +1,34 @@
+post https://rbds-attendance.herokuapp.com/user/login
+Content-Type: application/json
+
+{
+    "email":"",
+    "password":""
+}
+###
+POST  https://rbds-attendance.herokuapp.com/user/signup
+Content-Type: application/json
+
+{
+   "email": "kundan3@gmail.com",
+    "password": "mura1234"
+
+}
+
+###
+post https://rbds-attendance.herokuapp.com/user/login
+Content-Type: application/json
+
+{
+    "email":"saikus@gmail.com",
+    "password":"mura1234"
+}
+###
+post https://rbds-attendance.herokuapp.com/attendance/startSession
+Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhaWt1c0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MDllMGVjZmNmNGM1YzAwMjIwMWUyY2UiLCJpYXQiOjE2MjA5NzE2NjksImV4cCI6MTYyMDk3NTI2OX0.V_Xof-JfgroXZVgeFTIGXqC8_7wNOE5aN2hhWerOWxk
+Content-Type: application/json
+
+{
+    "email":"saikus@gmail.com",
+    
+}
