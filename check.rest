@@ -25,10 +25,23 @@ Content-Type: application/json
 }
 ###
 post https://rbds-attendance.herokuapp.com/attendance/startSession
-Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhaWt1c0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MDllMGVjZmNmNGM1YzAwMjIwMWUyY2UiLCJpYXQiOjE2MjA5NzE2NjksImV4cCI6MTYyMDk3NTI2OX0.V_Xof-JfgroXZVgeFTIGXqC8_7wNOE5aN2hhWerOWxk
+Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhaWt1c0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MDllMGVjZmNmNGM1YzAwMjIwMWUyY2UiLCJpYXQiOjE2MjExMzE3MDcsImV4cCI6MTYyMTEzNTMwN30.y9cIc4x9lRDKQtybyQ04BFJ-J4yjGHiDVexWurCV3iY 
+Content-Type: application/json
+###
+post https://rbds-attendance.herokuapp.com/attendance/endSession
+Authorization:Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhaWt1c0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MDllMGVjZmNmNGM1YzAwMjIwMWUyY2UiLCJpYXQiOjE2MjExMDIyODEsImV4cCI6MTYyMTEwNTg4MX0.R0o3mTu48ENqlWxRuGwhXNUOqM9xyl9xltM8qlmMoDs
+Content-Type: application/json
+
+
+
+
+####
+post https://rbds-attendance.herokuapp.com/user/login
 Content-Type: application/json
 
 {
-    "email":"saikus@gmail.com",
-    
+    "email":"",
+    "password":""
 }
+
+
