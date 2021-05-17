@@ -4,6 +4,8 @@ const spsw = document.getElementById('spsw')
 //button
 const SignUp = document.getElementById('ssignup')
 //livecontent
+const warning = document.getElementById('warning')//class
+const unlock = document.getElementById('unlock')//class
 const livecontent = document.getElementById('livecontent')
 //Stronging the data 
 const sign_updata ={"email":"","password":""}
@@ -29,7 +31,25 @@ const Sign_Up = ()=>{
         
     };
      fetch(url,options).then((res) => res.json()).then((res)=>{
-          livecontent.innerHTML = (res.message !== undefined)?res.message:"Please recheck yout details"
-     })    
+          
+          if(res.message ==="User created"){
+              livecontent.className="bluecolor"
+              livecontent.innerHTML="User created"
+                  
+              setTimeout(()=>{
+                window.location.replace('../Loginpage/index.html')
+              },6000)
+          }
+          else{
+            livecontent.innerHTML = (res.message !== undefined)?res.message:"Please recheck yout details"
+            setTimeout(() => {
+                livecontent.innerHTML =''
+            }, 3000);
+          }
+          
+          
+     })   
+        
+     
     
 }

@@ -37,13 +37,12 @@ const Login = () =>{
         
     };
     fetch(url,options).then((res) => res.json()).then((res)=>{
-        mytoken = res.mytoken
-        console.log(mytoken)
+        localStorage.setItem("token",res?.token)
         if(res.message === "Auth successful"){
             
             unlock.className = "unlock icon"
             setTimeout(() => {
-                window.location.replace('./mainpage/index.html')
+                window.location.replace('../mainpage/index.html')
             }, 3000);
         }
         else{

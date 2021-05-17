@@ -10,7 +10,7 @@ POST  https://rbds-attendance.herokuapp.com/user/signup
 Content-Type: application/json
 
 {
-   "email": "kundan3@gmail.com",
+   "email": "kundan20@gmail.com",
     "password": "mura1234"
 
 }
