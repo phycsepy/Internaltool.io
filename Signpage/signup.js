@@ -19,18 +19,17 @@ spsw.addEventListener('keyup',(ele)=>{
 SignUp.addEventListener('click',()=>Sign_Up())
 
 const Sign_Up = ()=>{
-
-    fetch('https://rbds-attendance.herokuapp.com/user/signup', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            'email': sign_updata.email,
-            "password":sign_updata.password
-        })
-    })
-        .then(response => console.log(response));
+    url = 'https://rbds-attendance.herokuapp.com/user/signup'
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(sign_updata),
+        headers:{
+            "Content-Type":"application/json"
+        }
+        
+    };
+     fetch(url,options).then((res) => res.json()).then((res)=>{
+          livecontent.innerHTML = (res.message !== undefined)?res.message:"Please recheck yout details"
+     })    
     
-
 }
