@@ -9,19 +9,19 @@ const calendar = document.getElementById("calendar")
 const attendance= document.getElementById("attendance")
 const Organization = document.getElementById('Organization')
 const me = document.getElementById("me")
-
+const out = document.getElementById('out')
 attendance.addEventListener("click",()=>attend())
 let headcount = 0
 let headcount2 = 0
-const todaystart = new Date()
-const todayend = new Date()
+let todaystart
+let todayend 
 let checkin_time
 
 
 function displayattends(){
   console.log(token)
   const constent_display = document.getElementById('constent_display')
-
+  todaystart = new Date()
   checkin_time =  todaystart.getHours()  + ":" + todaystart.getMinutes()
   console.log(checkin_time)
   fetch('https://rbds-attendance.herokuapp.com/attendance/startSession', {
@@ -49,7 +49,7 @@ function stopthis(){
   
   const constent_display2 = document.getElementById('constent_display2')
   
-
+  todayend = new Date()
   checkout_time =   todayend.getHours()+ ":" +todayend.getMinutes();
   console.log(checkout_time)
   fetch('https://rbds-attendance.herokuapp.com/attendance/endSession', {
@@ -59,7 +59,10 @@ function stopthis(){
                 }
             }).then(response =>{
               console.table(response)
-              if((headcount2 ===0) &&(response.statusText === "OK") ){
+              if(checkin_time !== Date.now()){
+                constent_display2.innerHTML ='Please press start button first'
+              }
+              else if((headcount2 ===0) &&(response.statusText === "OK") ){
                 constent_display2.innerHTML = `stoped recording from ${checkout_time}`
                 headcount2= headcount2 + 1
                 
@@ -74,8 +77,12 @@ function stopthis(){
 }
 function timecheck(){
 
-  var diff = Math.abs(todayend - todayend);
+  let diff = Math.abs(todayend - todayend);
  const display3 = document.getElementById('display3')
+  if(diff === 0)
+  {
+    display3.innerHTML = "today no work"
+  }
   display3.innerHTML = `${diff}`
   
 }
@@ -161,9 +168,12 @@ function attend(){
 }
 
 function commingsoon(){
-  placerun.innerHTML =''
-  document.body.style.backgroundImage = "url('../images/26690.svg')";
+  
+  document.body.style.backgroundImage = "url('../images/Live-Wave-Background.svg')";
   document.body.style.backgroundRepeat = "no-repeat"
+  
+  placerun.innerHTML = `<h1>Comming Soon</h1>`
+  
   
 }
 
@@ -175,5 +185,7 @@ rbds.addEventListener('click',()=>commingsoon())
 calendar.addEventListener('click',()=>commingsoon())
 me.addEventListener('click',()=>commingsoon())
 Organization.addEventListener('click',()=>commingsoon())
-
+out.addEventListener("click",()=>{
+  localStorage.removeItem("token");
+})
 

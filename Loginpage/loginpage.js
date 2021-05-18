@@ -38,7 +38,15 @@ const Login = () =>{
     };
     fetch(url,options).then((res) => res.json()).then((res)=>{
         localStorage.setItem("token",res?.token)
-        if(res.message === "Auth successful"){
+        if(login_update.email==="" && login_update.password===""){
+            warning.className = "ui icon warning message"
+            usermessage.innerHTML ="fill the details"
+            setTimeout(() => {
+                warning.className = "ui icon message"
+                usermessage.innerHTML  = ""
+            }, 3000)
+        }
+        else if(res.message === "Auth successful"){
             
             unlock.className = "unlock icon"
             setTimeout(() => {

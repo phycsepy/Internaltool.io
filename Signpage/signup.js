@@ -31,8 +31,17 @@ const Sign_Up = ()=>{
         
     };
      fetch(url,options).then((res) => res.json()).then((res)=>{
+         if(sign_updata.email ===""&& sign_updata.password===""){
+            livecontent.innerHTML = "Fill the deails"
+            warning.className = "ui icon warning message"
+            setTimeout(() => {
+                livecontent.innerHTML =''
+                warning.className = "ui icon message"
+            }, 3000);
+
+         }
           
-          if(res.message ==="User created"){
+         else if(res.message ==="User created"){
               livecontent.className="bluecolor"
               livecontent.innerHTML="User created"
                   
