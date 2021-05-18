@@ -187,5 +187,6 @@ me.addEventListener('click',()=>commingsoon())
 Organization.addEventListener('click',()=>commingsoon())
 out.addEventListener("click",()=>{
   localStorage.removeItem("token");
+  window.location.replace('../Homepage/index.html')
 })
 
