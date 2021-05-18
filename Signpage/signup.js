@@ -42,8 +42,10 @@ const Sign_Up = ()=>{
           }
           else{
             livecontent.innerHTML = (res.message !== undefined)?res.message:"Please recheck yout details"
+            warning.className = "ui icon warning message"
             setTimeout(() => {
                 livecontent.innerHTML =''
+                warning.className = "ui icon message"
             }, 3000);
           }
           

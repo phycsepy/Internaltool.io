@@ -25,7 +25,7 @@ Content-Type: application/json
 }
 ###
 post https://rbds-attendance.herokuapp.com/attendance/startSession
-Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhaWt1c0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MDllMGVjZmNmNGM1YzAwMjIwMWUyY2UiLCJpYXQiOjE2MjExMzE3MDcsImV4cCI6MTYyMTEzNTMwN30.y9cIc4x9lRDKQtybyQ04BFJ-J4yjGHiDVexWurCV3iY 
+Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhaWt1c0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MDllMGVjZmNmNGM1YzAwMjIwMWUyY2UiLCJpYXQiOjE2MjEyOTgzODQsImV4cCI6MTYyMTMwMTk4NH0.XkukzaoCUiC8NGkZaPex5qqvvVPvbEx-x8sp8r7b2A8
 Content-Type: application/json
 ###
 post https://rbds-attendance.herokuapp.com/attendance/endSession

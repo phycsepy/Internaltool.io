@@ -1,18 +1,13 @@
 body{
     background-color:whitesmoke;
+    margin-top: 5%;
+    margin-left: -7%;
+    margin-right: 5%;
+  
 }
 
-.pad{
- margin-bottom: 50px;   
-}
-.mar{
-    padding-top: 45px;
+.marright{
+    margin-left:-10% ;
+    
 }
 
-.start{
-    margin-block-start: 0%;
-}
-.whiteback{
-    background-color:white;
-    padding-top: 5%;
-}
