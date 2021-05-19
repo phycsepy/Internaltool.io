@@ -59,7 +59,7 @@ function stopthis(){
                 }
             }).then(response =>{
               console.table(response)
-              if(checkin_time !== Date.now()){
+              if(headcount === 0){
                 constent_display2.innerHTML ='Please press start button first'
               }
               else if((headcount2 ===0) &&(response.statusText === "OK") ){
